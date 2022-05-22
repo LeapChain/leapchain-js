@@ -4,7 +4,7 @@ In this section, we will discuss how to create accounts and use them within othe
 
 ## Creating Accounts
 
-Creating local accounts with thenewboston-js is extremely simple. All you have to do is access the `Account` class from the library. These accounts are also used when updating thenewboston server nodes (banks + validators) with requests. Here is a simple example of us using the `Account` class:
+Creating local accounts with leapchain-js is extremely simple. All you have to do is access the `Account` class from the library. These accounts are also used when updating leapchain server nodes (banks + validators) with requests. Here is a simple example of us using the `Account` class:
 
 ```ts
 // Generates a random account with a random hex signing key string.

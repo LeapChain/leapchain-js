@@ -1,6 +1,6 @@
 ## Contributing Guide
 
-Here you can learn about how you can help make thenewboston-js a robust and simple JavaScript library to use!
+Here you can learn about how you can help make leapchain-js a robust and simple JavaScript library to use!
 
 ### Setup
 
@@ -21,7 +21,7 @@ Before you are able to access any of the npm commands, you must first run `npm i
 If you are ready to test out your changes, run `npm run build`. After that, you should see the CommonJS module located in the `dist` directory. You can create a `dev.js` file with something like the following code if you want to test out your changes:
 
 ```js
-const tnb = require("./"); // loads the module from the path in the `package.json`
+const leap = require("./"); // loads the module from the path in the `package.json`
 
 async function main() {
   /* Code! */

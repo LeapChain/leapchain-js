@@ -1,4 +1,4 @@
-const tnb = require("../dist");
+const leap = require("../dist");
 const nock = require("nock");
 const data = require("./data/primaryValidator");
 
@@ -10,10 +10,10 @@ describe("PrimaryValidator", () => {
   });
   afterAll(() => nock.cleanAll());
 
-  const primaryValidator = new tnb.PrimaryValidator("http://54.241.124.162");
+  const primaryValidator = new leap.PrimaryValidator("http://54.241.124.162");
 
   it("constructor()", async () => {
-    const pv = new tnb.PrimaryValidator("http://54.241.124.162", { defaultPagination: { limit: 2, offset: 10 } });
+    const pv = new leap.PrimaryValidator("http://54.241.124.162", { defaultPagination: { limit: 2, offset: 10 } });
     expect(pv.url).toBe("http://54.241.124.162");
     expect(pv.options).toStrictEqual({ defaultPagination: { limit: 2, offset: 10 } });
   });
@@ -47,7 +47,7 @@ describe("PrimaryValidator", () => {
     const res = await primaryValidator.addBankBlocks(
       "fakeBalanceLock",
       [{ amount: 1, recipient: "fakeAccountNumber" }],
-      new tnb.Account("56ed13931da39aa9ce3eab53c5b66edb2fc90660d322c89312bd62f1d69da289")
+      new leap.Account("56ed13931da39aa9ce3eab53c5b66edb2fc90660d322c89312bd62f1d69da289")
     );
     expect(typeof res).toBe("object");
     expect(res).toStrictEqual({

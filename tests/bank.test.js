@@ -1,4 +1,4 @@
-const tnb = require("../dist");
+const leap = require("../dist");
 const nock = require("nock");
 const data = require("./data/bank");
 
@@ -75,15 +75,15 @@ describe("Bank", () => {
   afterAll(() => nock.cleanAll());
 
   it("constructor()", async () => {
-    const bank = new tnb.Bank("http://13.57.215.62", { defaultPagination: { limit: 2, offset: 10 } });
+    const bank = new leap.Bank("http://13.57.215.62", { defaultPagination: { limit: 2, offset: 10 } });
     expect(bank.url).toBe("http://13.57.215.62");
     expect(bank.options).toStrictEqual({ defaultPagination: { limit: 2, offset: 10 } });
   });
 
-  const bank = new tnb.Bank("http://13.57.215.62");
+  const bank = new leap.Bank("http://13.57.215.62");
 
   it("updateAccountTrust(accountNumber, trust, account)", async () => {
-    const res = await bank.updateAccountTrust("fakeAccountNumber", 10, new tnb.Account());
+    const res = await bank.updateAccountTrust("fakeAccountNumber", 10, new leap.Account());
     expect(typeof res).toBe("object");
     expect(res).toStrictEqual({
       id: "64426fc5-b3ac-42fb-b75b-d5ccfcdc6872",
@@ -148,7 +148,7 @@ describe("Bank", () => {
   });
 
   it("updateBankTrust(nodeIdentifier, trust, account)", async () => {
-    const res = await bank.updateBankTrust("fakeNodeIdentifier", 10, new tnb.Account());
+    const res = await bank.updateBankTrust("fakeNodeIdentifier", 10, new leap.Account());
     expect(typeof res).toBe("object");
     expect(res).toStrictEqual({
       account_number: "dfddf07ec15cbf363ecb52eedd7133b70b3ec896b488460bcecaba63e8e36be5",
@@ -196,7 +196,7 @@ describe("Bank", () => {
     const res = await bank.addBlocks(
       "fakeBalanceLock",
       [{ amount: 1, recipient: "fakeAccountNumber" }],
-      new tnb.Account(),
+      new leap.Account(),
       "Memo"
     );
     expect(typeof res).toBe("object");
@@ -290,7 +290,7 @@ describe("Bank", () => {
   });
 
   it("startCrawl(account)", async () => {
-    const res = await bank.startCrawl(new tnb.Account());
+    const res = await bank.startCrawl(new leap.Account());
     expect(typeof res).toBe("object");
     expect(res).toStrictEqual({
       crawl_last_completed: "2020-11-21 11:15:07.923380+00:00",
@@ -301,7 +301,7 @@ describe("Bank", () => {
   });
 
   it("stopCrawl(account)", async () => {
-    const res = await bank.stopCrawl(new tnb.Account());
+    const res = await bank.stopCrawl(new leap.Account());
     expect(typeof res).toBe("object");
     expect(res).toStrictEqual({
       crawl_last_completed: "2020-11-21 11:15:07.923380+00:00",
@@ -375,7 +375,7 @@ describe("Bank", () => {
   });
 
   it("updateValidatorConfirmationServices(start, end, account)", async () => {
-    const res = await bank.updateValidatorConfirmationServices(1, 10, new tnb.Account());
+    const res = await bank.updateValidatorConfirmationServices(1, 10, new leap.Account());
     expect(typeof res).toBe("object");
     expect(res).toStrictEqual({
       id: "a6e4f1b5-21ea-464d-ba24-027e48b1c1aa",
@@ -429,7 +429,7 @@ describe("Bank", () => {
 
   it("getBankPV()", async () => {
     const pv = await bank.getBankPV();
-    expect(pv).toBeInstanceOf(tnb.PrimaryValidator);
+    expect(pv).toBeInstanceOf(leap.PrimaryValidator);
     expect(pv.url).toBe("http://54.183.17.224");
   });
 
@@ -451,7 +451,7 @@ describe("Bank", () => {
   });
 
   it("startClean(account)", async () => {
-    const res = await bank.startClean(new tnb.Account());
+    const res = await bank.startClean(new leap.Account());
     expect(typeof res).toBe("object");
     expect(res).toStrictEqual({
       clean_last_completed: "2020-11-21 11:15:07.923380+00:00",
@@ -462,7 +462,7 @@ describe("Bank", () => {
   });
 
   it("stopClean(account)", async () => {
-    const res = await bank.stopClean(new tnb.Account());
+    const res = await bank.stopClean(new leap.Account());
     expect(typeof res).toBe("object");
     expect(res).toStrictEqual({
       clean_last_completed: "2020-11-21 11:15:07.923380+00:00",

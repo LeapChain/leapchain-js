@@ -12,7 +12,7 @@ assignees: ''
 <!-- Do not remove this part -->
 # Task
 
-Contributors are able to complete this task and earn thenewboston coins.  Check out the labels to learn how much you can earn for contributing by completing this task.  Please make sure to be honest if you wish to contribute by saying you can't finish this and we can just un-assign you with no harm done!  There is no point in delaying tasks from being completed for miscommunication!
+Contributors are able to complete this task and earn LeapChain coins.  Check out the labels to learn how much you can earn for contributing by completing this task.  Please make sure to be honest if you wish to contribute by saying you can't finish this and we can just un-assign you with no harm done!  There is no point in delaying tasks from being completed for miscommunication!
 <!-- Alright, now fill in the following areas below -->
 
 ## Overview

@@ -19,7 +19,7 @@ const paymentHandlerOptions = {
   bankUrl: bankUrl,
 };
 
-const paymentHandler = new tnb.AccountPaymentHandler(paymentHandlerOptions);
+const paymentHandler = new leap.AccountPaymentHandler(paymentHandlerOptions);
 
 // This is very important.
 // Method for getting the Bank and Primary validator Transactions fees
@@ -50,7 +50,7 @@ const paymentHandlerOptions = {
   bankUrl: bankUrl,
 };
 
-const paymentHandler = new tnb.AccountPaymentHandler(paymentHandlerOptions);
+const paymentHandler = new leap.AccountPaymentHandler(paymentHandlerOptions);
 
 // This is very important.
 // Method for getting the Bank and Primary validator Transactions fees

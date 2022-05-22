@@ -206,7 +206,7 @@ console.log(banks);
 
 ### Working With Blocks
 
-A validator's main purpose is to validate the transactions that a Bank creates. These transactions are called Blocks. All Validators share the `getValidConfirmationBlock` and `getQueuedConfirmationBlock` methods to view the blocks that a Bank is asking them to validate. If you go to your TNB Account Manager, click on a Validator and then its "confirmations", you will see a list of all the confirmed blocks that the Validator processed and if you take the "Block Identifier" and pass it as a string to the `getValidConfirmationBlock` method, you will see the in depth details of a Block.
+A validator's main purpose is to validate the transactions that a Bank creates. These transactions are called Blocks. All Validators share the `getValidConfirmationBlock` and `getQueuedConfirmationBlock` methods to view the blocks that a Bank is asking them to validate. If you go to your leap Account Manager, click on a Validator and then its "confirmations", you will see a list of all the confirmed blocks that the Validator processed and if you take the "Block Identifier" and pass it as a string to the `getValidConfirmationBlock` method, you will see the in depth details of a Block.
 
 ```ts
 const PV = new PrimaryValidator("http://157.230.75.212");
@@ -268,7 +268,7 @@ To get an unconfirmed or queued Block is a little more difficult since the netwo
 ```ts
 // let's assume this Confirmation Validator has its services subscribed to by this Bank.
 const CV = new ConfirmationValidator("http://157.230.10.237");
-const bank = new tnb.Bank("http://143.110.137.54");
+const bank = new leap.Bank("http://143.110.137.54");
 const transactionsData = await bank.getTransactions();
 const transactions = transactionsData.results.map(({ amount, recipient }) => ({
   // Destructuring
@@ -276,7 +276,7 @@ const transactions = transactionsData.results.map(({ amount, recipient }) => ({
   recipient,
 }));
 
-await bank.addBlocks("fakeBalanceLock", transactions, new tnb.Account("fakeSigningKey", "fakeAccountNumber"));
+await bank.addBlocks("fakeBalanceLock", transactions, new leap.Account("fakeSigningKey", "fakeAccountNumber"));
 /* the above code is explained in the Banks section, and for the sake not being repetitive, 
 please refer to the "Adding Blocks" subsection of Banks for explanation of this code*/
 

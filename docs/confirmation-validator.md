@@ -11,7 +11,7 @@ Confirmation Services are services rendered by a CV for validating a Bank's tran
 We can see what Banks are currently using a Confirmation Validators services and the details attached by using the `getBankConfirmationServices()` method
 
 ```ts
-const CV = new tnb.ConfirmationValidator("http://54.177.174.219");
+const CV = new leap.ConfirmationValidator("http://54.177.174.219");
 
 // retrive confirmation services handled by CV
 const paginationOptions = { limit: 2, offset: 0 };
@@ -52,7 +52,7 @@ The CV sends a notice back to the bank that indicates that they are leaving the 
 The Primary Validator Updated Notice can be sent using the `sendPrimaryValidatorUpdatedPing()` method
 
 ```ts
-const CV = new tnb.ConfirmationValidator("http://54.177.174.219");
+const CV = new leap.ConfirmationValidator("http://54.177.174.219");
 
 //Ip address of leaving PV
 const ipAddress: "54.193.31.159";
@@ -60,7 +60,7 @@ const port: "80";
 const protocol = "http";
 
 //Account of CV
-const account = new  tnb.Account(CV.getConfig().account_number, "fakeSigningKeyHex");
+const account = new  leap.Account(CV.getConfig().account_number, "fakeSigningKeyHex");
 
 cont response = await CV.sendPrimaryValidatorUpdatedPing(ipAddress, port, protocol,  account);
 
@@ -80,13 +80,13 @@ A Request sent to Confirmation Validator requesting one of them to upgrade to a 
 The Upgrade Request can be sent using the `sendUpgradeRequest()` method
 
 ```ts
-const CV = new tnb.ConfirmationValidator("http://54.177.174.219");
+const CV = new leap.ConfirmationValidator("http://54.177.174.219");
 
 //the node identifier of the confirmation validator that is receiving the upgrade notice
 const nodeIdentifier = "9bfa37627e2dba0ae48165b219e76ceaba036b3db8e84108af73a1cce01fad35";
 
 //Account of current CV
-const account = new tnb.Account(CV.getConfig().account_number, "fakeSigningKeyHex");
+const account = new leap.Account(CV.getConfig().account_number, "fakeSigningKeyHex");
 
 const response = await CV.sendUpgradeRequest(nodeIdentifier, account);
 

@@ -1,8 +1,8 @@
-const tnb = require("../dist");
+const leap = require("../dist");
 
 describe("PaymentHandler", () => {
-  const bank = new tnb.Bank("http://54.177.121.3");
-  const paymentHandler = new tnb.PaymentHandler({ bankUrl: bank.url });
+  const bank = new leap.Bank("http://54.177.121.3");
+  const paymentHandler = new leap.PaymentHandler({ bankUrl: bank.url });
 
   it("constructor()", async () => {
     await paymentHandler.init();
@@ -14,8 +14,8 @@ describe("PaymentHandler", () => {
   it("createTransaction(sender: Account, txs: Transaction[])", async () => {
     const pv = await bank.getBankPV();
     paymentHandler.init();
-    const sender = new tnb.Account();
-    const recipient = new tnb.Account();
+    const sender = new leap.Account();
+    const recipient = new leap.Account();
 
     const txs = [
       {

@@ -358,7 +358,7 @@ We can also add blocks.
 Adding Blocks is also basically an API call, but we have more options this time.
 
 ```ts
-const bank = new tnb.Bank("http://143.110.137.54");
+const bank = new leap.Bank("http://143.110.137.54");
 const transactionsData = await bank.getTransactions();
 const transactions = transactionsData.results.map(({ amount, recipient }) => ({
   // Destructuring
@@ -368,7 +368,7 @@ const transactions = transactionsData.results.map(({ amount, recipient }) => ({
 const result = await bank.addBlocks(
   "fakeBalanceLock",
   transactions,
-  new tnb.Account("fakeSigningKey", "fakeAccountNumber")
+  new leap.Account("fakeSigningKey", "fakeAccountNumber")
 );
 console.log(result);
 // {
@@ -597,7 +597,7 @@ An upgrade request is basically the bank asking one of its confirmation validato
 We can send an upgrade request using the `Bank.sendUpgradeRequest` method.
 
 ```ts
-const bank = new tnb.Bank("http://143.110.137.54");
+const bank = new leap.Bank("http://143.110.137.54");
 const res = await bank.sendUpgradeRequest("fdasfsafdsa", new Account()); // Fake data, causes a 404 error
 console.log(res);
 // No response
@@ -610,7 +610,7 @@ An upgrade notice is when a bank is asking another bank whether they have switch
 We send an upgrade notice with the `Bank.sendUpgradeNotice` method.
 
 ```ts
-const res = await bank.sendUpgradeNotice("fewafdsa3243ewdsvgsf", new tnb.Account()); // Fake data will result in status code 401
+const res = await bank.sendUpgradeNotice("fewafdsa3243ewdsvgsf", new leap.Account()); // Fake data will result in status code 401
 console.log(res);
 // No response
 // Status Code 200 if the bank has set the new Primary Validator
@@ -624,7 +624,7 @@ console.log(res);
 Simply use the `Bank.getBankPV` method which returns the formatted url of the Primary Validator
 
 ```ts
-const bank = new tnb.Bank("http://143.110.137.54");
+const bank = new leap.Bank("http://143.110.137.54");
 const pv = await bank.getBankPV();
 ```
 
@@ -633,7 +633,7 @@ const pv = await bank.getBankPV();
 Use the `Bank.getTxFee` method to get the transaction fee
 
 ```ts
-const bank = new tnb.Bank("http://143.110.137.54");
+const bank = new leap.Bank("http://143.110.137.54");
 console.log(await bank.getTxFee());
 // 1
 ```
