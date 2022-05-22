@@ -1,13 +1,13 @@
 # Documentation
 
-Here, you will learn about how to use all of what thenewboston-js has to offer. If you notice an error or typo, then please create a pull request yourself and we can pull in the changes to save everyone some time.
+Here, you will learn about how to use all of what leapchain-js has to offer. If you notice an error or typo, then please create a pull request yourself and we can pull in the changes to save everyone some time.
 
 ## Getting Started
 
 There are two ways to use the library.
 
 - Clone the repository / download the files and load them into your project.
-- Using NPM `npm install thenewboston `, this will install the library to your package.json file
+- Using NPM `npm install leapchain `, this will install the library to your package.json file
 
 > For simplicity, we will not be including `import` or `require` statements in our examples.
 
