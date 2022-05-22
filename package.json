@@ -1,5 +1,5 @@
 {
-  "name": "thenewboston",
+  "name": "leapchain-js",
   "version": "1.1.0-alpha.5",
   "description": "JavaScript library for thenewboston.",
   "author": {
@@ -11,7 +11,7 @@
     "prettier": "prettier --write --loglevel silent \"{,!(node_modules)/**/}*.ts\"",
     "build": "npm run clean && npm run build:node && npm run build:web",
     "build:node": "rollup -c",
-    "build:web": "browserify dist/index.js -p tinyify --no-flat -o dist/tnb.min.js -s tnb",
+    "build:web": "browserify dist/index.js -p tinyify --no-flat -o dist/tnb.min.js -s leap",
     "test:no-build": "jest",
     "test": "npm run build && npm run test:no-build",
     "prepack": "npm run build && npm run test:no-build",
