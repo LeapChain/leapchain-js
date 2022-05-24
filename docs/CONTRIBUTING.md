@@ -10,7 +10,7 @@ Make sure you clone the official repository. Here is the command to run if you w
 > git clone https://github.com/thenewboston-developers/thenewboston-js.git
 ```
 
-After that, you should see a new folder named `thenewboston-js` in your current working directory. Navigate into that project and you're ready to go!
+After that, you should see a new folder named `leapchain-js` in your current working directory. Navigate into that project and you're ready to go!
 
 ### Development
 
