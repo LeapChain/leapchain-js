@@ -16,7 +16,7 @@ module.exports = {
   accounts,
   accountBalance,
   accountBalanceLock,
-  accountLock,
+  accountLocked,
   bank,
   banks,
   clean,
