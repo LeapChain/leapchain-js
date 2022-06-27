@@ -1,6 +1,7 @@
 const accounts = require("./accounts");
 const accountBalance = require("./accountBalance");
 const accountBalanceLock = require("./accountBalanceLock.js");
+const accountLocked = require("./accountLocked");
 const bank = require("./bank");
 const banks = require("./banks");
 const clean = require("./clean");
@@ -15,6 +16,7 @@ module.exports = {
   accounts,
   accountBalance,
   accountBalanceLock,
+  accountLock,
   bank,
   banks,
   clean,
