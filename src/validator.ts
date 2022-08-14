@@ -46,12 +46,21 @@ export abstract class Validator extends ServerNode {
   }
 
   /**
+   * Gets the account locked balance with the given account number (id).
+   * @param accountNumber the public key of the account
+   */
+  async getAccountLocked(accountNumber: string) {
+    return await super.getData<AccountBalanceResponse>(`/accounts/${accountNumber}/locked`);
+  }
+
+  /**
    * Gets the details of given block identifier's queued transactions.
    * @param blockId the block identifier
    */
   async getQueuedConfirmationBlock(blockId: string) {
     return await super.getData<ConfirmationBlock>(`/confirmation_blocks/${blockId}/queued`);
   }
+
 
   /**
    * Gets the details of given block identifier's valid transactions.

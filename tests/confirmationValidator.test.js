@@ -18,6 +18,8 @@ describe("", () => {
       .reply(200, cvData.accountBalance)
       .get(`/accounts/${accountNumber}/balance_lock`)
       .reply(200, cvData.accountBalanceLock)
+      .get(`/accounts/${accountNumber}/locked`)
+      .reply(200, cvData.accountLocked)
       .get("/accounts")
       .query({ limit: 20, offset: 0 })
       .reply(200, cvData.accounts)
@@ -66,6 +68,12 @@ describe("", () => {
     expect(balanceLock).toStrictEqual({
       balance_lock: "330cf5f7a06b7915adbc1a26228bf1fa6729aff9133259916c393383cf9f6d7d",
     });
+  });
+
+  it("getAccountLocked(accountNumber: string)", async () => {
+    const locked = await cv.getAccountLocked(accountNumber);
+
+    expect(locked).toStrictEqual({ balance: 502 });
   });
 
   it("getAccounts(options: Partial<PaginationOptions> = {})", async () => {

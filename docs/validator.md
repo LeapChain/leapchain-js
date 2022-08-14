@@ -140,6 +140,13 @@ const balLock = await confirmationValidator.getAccountBalanceLock(
 );
 console.log(balLock);
 // { balance_lock: '57c10f3554872103c9b91e481347c2522dd5a13757831a51b12180c09e2e50ce' }
+
+// call to getAccountLocked
+const locked = await primaryValidator.getAccountLocked(
+  "57c10f3554872103c9b91e481347c2522dd5a13757831a51b12180c09e2e50ce"
+);
+console.log(locked);
+// { balance: 2000 }
 ```
 
 ### Working With Other Nodes
